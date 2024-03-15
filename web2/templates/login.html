@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Login</title>
+    <style>
+      form {
+        width: 400px;
+        padding: 1em;
+        border: 1px solid #ccc;
+      }
+      label {
+        display: inline-block;
+        width: 90px;
+        text-align: right;
+      }
+      form div + div{
+        margin-top: 1em;
+      }
+      .button{
+        padding-left: 90px;
+      }
+      button{ 
+        margin-left: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>로그인</h1>
+    <form method="POST" action="/login">
+      <div>
+        <label for = "id"> 아이디</label>
+        <input type ="text" name = "id" />
+      </div>
+      <div>
+        <label for = "password" >비밀번호</label>
+        <input type = "text" name = "password" />
+      </div>
+      <div class='button'>
+      <button type = "submit">로그인</button>
+      </div>
+    </form>
+    <div>
+      {% if result == None %}
+      <h3>로그인을 진행해주세요</h3>
+      {% else %}
+      <h3>{{result}}</h3>
+      {% endif %}
+    </div> 
+  </body>
+</html>
